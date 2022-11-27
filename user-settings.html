@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/user-settings.css" />
+    <title>Settings menu</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="settings">
+        <div class="settings__profile">
+          <div class="settings__profile-img">
+            <img src="img/user.jpg" alt="User Profile Image" />
+          </div>
+          <div class="settings__profile-textBx">
+            <h2 class="settings__name">Aisha Brown</h2>
+            <p class="paragraph settings__job">Senior Developer</p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="settings__settingBx">
+          <ul class="settings__list">
+            <li class="settings__item">
+              <input
+                type="checkbox"
+                name="wi-fi"
+                id="wi-fi-check"
+                class="settings__checkbox"
+                aria-label="wi-fi checkbox"
+              />
+              <label for="wi-fi-check" class="settings__option">
+                <span class="settings__option-name">
+                  <ion-icon name="wifi" aria-hidden="true"></ion-icon> Wifi
+                </span>
+              </label>
+            </li>
+            <!-- ------------option ------- -->
+            <li class="settings__item">
+              <input
+                type="checkbox"
+                name="bluetooth"
+                id="bluetooth-check"
+                class="settings__checkbox"
+                aria-label="bluetooth checkbox"
+              />
+              <label for="bluetooth-check" class="settings__option">
+                <span class="settings__option-name">
+                  <ion-icon name="bluetooth" aria-hidden="true"></ion-icon>
+                  Bluetooth
+                </span>
+              </label>
+            </li>
+            <!-- ------------option ------- -->
+            <li class="settings__item">
+              <input
+                type="checkbox"
+                name="airplane"
+                id="airplane-check"
+                class="settings__checkbox"
+                aria-label="airplane checkbox"
+              />
+              <label for="airplane-check" class="settings__option">
+                <span class="settings__option-name">
+                  <ion-icon name="airplane" aria-hidden="true"></ion-icon>
+                  Airplane Mode
+                </span>
+              </label>
+            </li>
+            <!-- ------------option ------- -->
+            <li class="settings__item">
+              <input
+                type="checkbox"
+                name="location"
+                id="location-check"
+                class="settings__checkbox"
+                aria-label="location checkbox"
+              />
+              <label for="location-check" class="settings__option">
+                <span class="settings__option-name">
+                  <ion-icon name="location" aria-hidden="true"></ion-icon>
+                  Location
+                </span>
+              </label>
+            </li>
+            <!-- ------------option ------- -->
+            <li class="settings__item" id="dark-mode-toggle">
+              <input
+                type="checkbox"
+                name="dark-mode"
+                id="dark-mode-check"
+                class="settings__checkbox"
+                aria-label="dark mode checkbox"
+              />
+              <label for="dark-mode-check" class="settings__option">
+                <span class="settings__option-name">
+                  <ion-icon name="moon" aria-hidden="true"></ion-icon>
+                  Dark Mode
+                </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ------------script---------- -->
+    <script defer src="js/user-settings.js"></script>
+    <!-- ion icon script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

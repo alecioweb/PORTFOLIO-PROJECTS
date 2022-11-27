@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    --primary: #049478;
+    --background: #E9F5F1;
+    --surface: #fff;
+    --elev-1: linear-gradient(transparent, transparent);
+    --elev-3: linear-gradient(#D9D9D9, #D9D9D9);
+    --on-surface-900: #282E2D;
+    --on-surface-800: rgba(40, 46, 45, 0.74);
+    --on-surface-700: rgba(40, 46, 45, 0.38);
+    --checkbox: #D9D9D9;
+    --box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.07);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.dark {
+    --primary: #80CAB9;
+    --background: #0D0F0F;
+    --surface: #0D0F0F;
+    --elev-1: linear-gradient(rgba(128, 202, 185, 0.05), rgba(128, 202, 185, 0.05));
+    --elev-3: linear-gradient(rgba(128, 202, 185, 0.11), rgba(128, 202, 185, 0.11));
+    --on-surface-900: rgba(255, 255, 255, 0.87);
+    --on-surface-800: rgba(255, 255, 255, 0.60);
+    --on-surface-700: rgba(255, 255, 255, 0.38);
+    --checkbox: rgba(255, 255, 255, 0.38);
+    --box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.05);
+}
+
+body.dark .settings {
+    backdrop-filter: blur(4px);
+    border-radius: 26px;
+    box-shadow: 0px 24px 40px 0px rgba(255, 255, 255, 0.02), inset 0px -5px 16px 0px rgba(13, 15, 15, 0.4), inset 0px 11px 28px 0px rgba(40, 46, 45, 0.6)
+}
+
+/* resuable  */
+.paragraph {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: var(--on-surface-800);
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--elev-3);
+    margin-top: 1rem;
+}
+
+.container {
+    margin: 1rem;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.settings {
+    position: relative;
+    user-select: none;
+    padding: 2rem;
+    /* background-color: var(--surface);
+    background-image: var(--elev-1);
+    box-shadow: var(--box-shadow); */
+
+    backdrop-filter: blur(4px);
+    background-color: var(--surface);
+    border-radius: 26px;
+    box-shadow: 0px 35px 68px 0px rgba(4, 148, 120, 0.2), inset 0px -5px 16px 0px rgba(4, 148, 120, 0.4), inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.settings__profile {
+    display: flex;
+    gap: 1rem;
+}
+
+.settings__profile-img img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50px;
+}
+
+.settings__name {
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: var(--on-surface-900);
+}
+
+.settings__job {
+    font-weight: 500;
+}
+
+.settings__settingBx {
+    margin-top: 2rem;
+}
+
+.settings__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.settings__item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings__option-name {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.settings__option-name ion-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* ---styling checkbox ---- */
+.settings__checkbox {
+    order: 1;
+    appearance: none;
+    display: block;
+    width: 2.75rem;
+    height: 1.5rem;
+    background-color: var(--checkbox);
+    border-radius: 24px;
+    padding: 4px;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.settings__checkbox::before {
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--surface);
+    border-radius: 10px;
+    transition: transform .3s;
+}
+
+/* ---- label ----- */
+.settings__option {
+    flex-grow: 1;
+    color: var(--on-surface-800);
+    cursor: pointer;
+}
+
+.settings__checkbox:checked {
+    background-color: var(--primary);
+}
+
+.settings__checkbox:checked::before {
+    transform: translateX(20px);
+}
+
+.settings__checkbox:checked~.settings__option {
+    color: var(--on-surface-900);
+}

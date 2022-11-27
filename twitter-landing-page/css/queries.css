@@ -1,0 +1,15 @@
+@media (max-width: 75rem) {
+    .container {
+        max-width: 110rem;
+    }
+}
+
+@media (max-width: 70rem) {
+    .d-none {
+        display: none;
+    }
+
+    .flex-row {
+        display: none;
+    }
+}
