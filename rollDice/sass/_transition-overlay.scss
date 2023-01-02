@@ -1,0 +1,95 @@
+@use "abstract" as a;
+.hidden {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  pointer-events: none;
+}
+
+.overlay-box {
+  width: 200%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  right: -200%;
+  z-index: 1000;
+}
+
+.start-animation {
+  animation: move-in 2s ease-out none;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 25%;
+  background-color: var(--clr);
+  right: -20%;
+}
+
+.overlay:nth-child(2) {
+  left: 50%;
+}
+
+.overlay:nth-child(3) {
+  right: 0;
+}
+.overlay-100 {
+  width: 50%;
+  left: 0;
+}
+
+.overlay-start {
+  animation: move-in 3s calc(100ms * var(--i)) ease-in-out forwards;
+}
+
+.overlay-end {
+  animation: move-out 3s calc(100ms * var(--i)) ease-out forwards;
+}
+
+@keyframes move-in {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(-50%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-150%);
+  }
+}
+@keyframes move-out {
+  0% {
+    left: -20%;
+  }
+
+  50% {
+    left: calc(100% / 5 * var(--i));
+  }
+
+  70% {
+    left: calc(100% / 5 * var(--i));
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+@keyframes showBtn {
+  from {
+    transform: translate(-80%, -50%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}

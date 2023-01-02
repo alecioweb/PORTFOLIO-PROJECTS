@@ -1,0 +1,52 @@
+@use "../abstract" as a;
+
+.btn-wrapper {
+  min-height: a.rem(500);
+  height: 77vh;
+  position: absolute;
+  top: a.rem(10);
+  left: 50%;
+  transform: translateX(-50%);
+  @include a.respond(phone) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    min-height: a.rem(644);
+  }
+}
+.btn {
+  white-space: nowrap;
+  //   @include a.centerAbsolute(a.rem(12));
+  //   @include color;
+  @include a.btn(rgba(255, 255, 255, 0.9));
+
+  &:hover,
+  &:focus-visible {
+    @include a.btnHover;
+  }
+
+  &:active {
+    transform: translateY(0.25em);
+  }
+}
+
+#btn--hold {
+  margin-top: a.rem(48);
+
+  @include a.respond(phone) {
+    margin-top: 0;
+  }
+}
+
+#btn--new {
+  position: absolute;
+  bottom: 0;
+  @include a.respond(phone) {
+    bottom: a.rem(-10);
+  }
+}
+
+#btn--start {
+  margin-top: 6rem;
+}

@@ -1,0 +1,104 @@
+@use "abstract" as a;
+
+.main {
+  width: 100%;
+  display: flex;
+  position: relative;
+  display: none;
+  // opacity: 0;
+  // transform: translateX(a.rem(40));
+
+  // animation: move-to-left 300ms ease-out backwards 0.9s;
+}
+.wrapper {
+  backdrop-filter: blur(5px);
+  background: linear-gradient(
+    313.79deg,
+    rgba(15, 184, 164, 0.8) 1.29%,
+    rgba(0, 151, 207, 0.8) 100.74%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 10px 0px rgba(255, 255, 255, 0.3),
+    0px 20px 0px rgba(255, 255, 255, 0.2), 0px 30px 0px rgba(255, 255, 255, 0.1);
+  border-radius: a.rem(184);
+
+  margin-inline: auto;
+  margin-block-start: 2rem;
+  margin-block-end: 3rem;
+  min-height: a.rem(614);
+  width: calc(100% - 1.5rem);
+  max-width: a.rem(1128);
+  display: flex;
+  text-align: center;
+  overflow: hidden;
+
+  @include a.respond(phone) {
+    flex-direction: column;
+    min-height: a.rem(760);
+    gap: a.rem(100);
+  }
+}
+
+.player {
+  flex: 1;
+  padding: var(--space-medium);
+  padding-bottom: 0;
+  color: rgba(255, 255, 255, 0.9);
+  word-break: break-all;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 150ms linear;
+
+  //for current player
+  &--active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &__name {
+    font-size: var(--heading-primary);
+    font-weight: 900;
+  }
+
+  &__score {
+    color: var(--clr-primary-900);
+    font-size: var(--heading-secondary);
+    font-weight: 900;
+  }
+
+  //PLAYER CURRENT SCORE
+  &__current {
+    font-size: var(--heading-5);
+    font-weight: 900;
+    padding: 1rem;
+    border-top-left-radius: a.rem(42);
+    border-top-right-radius: a.rem(42);
+    border-inline: 2px solid rgba(255, 255, 255, 0.4);
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+
+    &-label {
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    &-score {
+      color: var(--clr-primary-900);
+    }
+  }
+}
+
+.dice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 2rem 4rem rgba(0, 0, 0, 0.25));
+  @include a.respond(phone) {
+    width: a.rem(88);
+  }
+
+  &--hide {
+    display: none;
+  }
+}

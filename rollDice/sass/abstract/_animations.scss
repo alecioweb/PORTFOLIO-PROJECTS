@@ -1,0 +1,12 @@
+@use "../abstract/functions" as a;
+@keyframes move-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(a.rem(50));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

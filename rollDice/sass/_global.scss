@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;900&display=swap");
+html {
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cinzel", serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  // transition: all 0s 1s;
+  background: linear-gradient(128.17deg, #0fb8a4 20.38%, #0097cf 101.45%);
+}
+
+button,
+input {
+  appearance: none;
+  border: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+:root {
+  --clr-primary-900: #09475e;
+
+  --heading-primary: clamp(2.57rem, calc(0.83rem + 4.63vw), 4.3rem);
+  --heading-secondary: clamp(2.28rem, calc(0.98rem + 3.47vw), 3.58rem);
+  --heading-5: clamp(1.27rem, calc(1.09rem + 0.47vw), 1.44rem);
+
+  //spacing
+  --space-medium: clamp(3rem, calc(2rem + 2.67vw), 4rem);
+}
